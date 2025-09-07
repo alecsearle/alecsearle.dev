@@ -1,0 +1,58 @@
+:root {
+  --primary-color: #2a9d8f;
+}
+
+.about {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0rem 4rem;
+}
+
+.about h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0 0 2rem 0;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+.line {
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin: 2rem 0;
+  border-radius: 2px;
+  width: 100px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  font-weight: 300;
+  max-width: 800px;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about h1 {
+    font-size: 2.5rem;
+  }
+
+  .about p {
+    font-size: 1.1rem;
+  }
+}
