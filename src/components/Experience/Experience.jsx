@@ -133,39 +133,37 @@ function Experience() {
   }, []);
 
   return (
-    <section id="experience" className="experience-section" ref={sectionRef}>
-      <div className="experience-container">
-        <h1 className="experience-title">Experience</h1>
+    <div className="about" ref={sectionRef}>
+      <h1>Experience</h1>
+      <div className="line"></div>
+      <div className="timeline-container">
+        {/* Timeline line */}
+        <div className="timeline" ref={timelineRef}>
+          <div className="timeline-progress" ref={progressRef}></div>
+        </div>
 
-        <div className="timeline-container">
-          {/* Timeline line */}
-          <div className="timeline" ref={timelineRef}>
-            <div className="timeline-progress" ref={progressRef}></div>
-          </div>
-
-          {/* Experience items */}
-          <div className="experience-content">
-            {experienceData.map((item, index) => (
-              <div key={item.id} className="experience-item">
-                <div className="experience-dot"></div>
-                <div className="experience-card">
-                  <div className="experience-header">
-                    <h3 className="company-name">{item.company}</h3>
-                    <span className="period">{item.period}</span>
-                  </div>
-                  <h4 className="position">{item.position}</h4>
-                  <ul className="description-list">
-                    {item.description.map((desc, descIndex) => (
-                      <li key={descIndex}>{desc}</li>
-                    ))}
-                  </ul>
+        {/* Experience items */}
+        <div className="experience-content">
+          {experienceData.map((item, index) => (
+            <div key={item.id} className="experience-item">
+              <div className="experience-dot"></div>
+              <div className="experience-card">
+                <div className="experience-header">
+                  <h3 className="company-name">{item.company}</h3>
+                  <span className="period">{item.period}</span>
                 </div>
+                <h4 className="position">{item.position}</h4>
+                <ul className="description-list">
+                  {item.description.map((desc, descIndex) => (
+                    <li key={descIndex}>{desc}</li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

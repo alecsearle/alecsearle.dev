@@ -101,7 +101,6 @@ h1 .highlight {
   max-height: 80vh;
   display: block;
   margin: 0;
-  vertical-align: bottom;
 }
 
 /* Responsive design */
@@ -126,6 +125,6 @@ h1 .highlight {
   }
 
   .hero-image img {
-    max-height: 60vh;
+    max-height: 40vh;
   }
 }

@@ -10,8 +10,8 @@ const PillNav = () => {
   const navItems = [
     { label: "Home", target: "hero" },
     { label: "About", target: "about" },
+    { label: "Experience", target: "experience" },
     { label: "Projects", target: "projects" },
-    { label: "Skills", target: "skills" },
     { label: "Contact", target: "contact" },
   ];
 
@@ -30,6 +30,41 @@ const PillNav = () => {
     scrollToSection(targetId);
   };
 
+  // Intersection Observer for scroll-based navigation
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0% -80% 0%", // Trigger when section is 20% from top
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const targetId = entry.target.id;
+          const index = navItems.findIndex((item) => item.target === targetId);
+          if (index !== -1) {
+            setActiveItem(index);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    navItems.forEach((item) => {
+      const element = document.getElementById(item.target);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   useEffect(() => {
     const nav = navRef.current;
     const indicator = indicatorRef.current;
@@ -37,12 +72,12 @@ const PillNav = () => {
     if (!nav || !indicator) return;
 
     const updateIndicator = () => {
-      const activeLink = nav.children[activeItem];
+      const activeLink = nav.children[activeItem + 1]; // +1 to skip the indicator element
       if (activeLink) {
         const { offsetLeft, offsetWidth } = activeLink;
 
         gsap.to(indicator, {
-          x: offsetLeft,
+          x: offsetLeft - 8, // Subtract the container's padding (0.5rem = 8px)
           width: offsetWidth,
           duration: 0.3,
           ease: "power2.out",

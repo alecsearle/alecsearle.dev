@@ -3,18 +3,45 @@
   --sat: 69%;
   --white: hsl(0, 0%, 100%);
   --purple-primary: #2a9d8f;
-  --purple-glow: rgba(42, 157, 143, 0.2);
+  --purple-glow: rgba(42, 157, 143, 0.3);
   --purple-border: rgba(42, 157, 143, 0.8);
-  --border-color: rgba(42, 157, 143, 0.2);
-  --background-dark: #060010;
+  --border-color: rgba(42, 157, 143, 0.3);
+  --background-dark: #060010f1;
   color-scheme: light dark;
+}
+
+.projects {
+  color: white;
+  padding: 0rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0 0 2rem 0;
+  color: white;
+  letter-spacing: -0.02em;
+  align-self: flex-start;
+}
+
+.line {
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin: 2rem 0;
+  border-radius: 2px;
+  width: 100px;
+  align-self: flex-start;
 }
 
 .card-grid {
   display: grid;
-  gap: 0.5em;
-  padding: 0.75em;
-  max-width: 54em;
+  gap: 1rem;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1200px;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
 }
 
@@ -29,11 +56,11 @@
   max-width: 100%;
   padding: 1.25em;
   border-radius: 20px;
-  border: 1px solid var(--border-color);
   background: var(--background-dark);
   font-weight: 300;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
 
   /* Background image properties */
   background-size: cover;
@@ -50,27 +77,24 @@
 .card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(6, 0, 16, 0.7) 0%,
-    rgba(6, 0, 16, 0.8) 50%,
-    rgba(6, 0, 16, 0.9) 100%
-  );
+  inset: 0; /* Use inset instead of individual positioning */
+  background: var(--background-dark); /* Solid background instead of gradient */
   z-index: 1;
-  border-radius: inherit;
-  transition: opacity 0.3s ease;
+  border-radius: 20px;
+  transition: all 0.5s ease;
 }
 
 .card:hover::before {
+  opacity: 0;
+}
+
+/* Optional: Add a class for cards without images to keep the dark background */
+.card--no-image::before {
   background: linear-gradient(
     135deg,
-    rgba(6, 0, 16, 0.6) 0%,
-    rgba(6, 0, 16, 0.7) 50%,
-    rgba(6, 0, 16, 0.8) 100%
+    rgba(6, 0, 16, 0.95) 0%,
+    rgba(6, 0, 16, 0.98) 50%,
+    rgba(6, 0, 16, 1) 100%
   );
 }
 
@@ -79,12 +103,23 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+.card[style*="cursor: pointer"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
 .card__header,
 .card__content {
   display: flex;
   position: relative;
   color: var(--white);
   z-index: 2; /* Ensure content is above overlay */
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .card__header,
+.card:hover .card__content {
+  opacity: 0;
 }
 
 .card__header {
@@ -145,12 +180,26 @@
   line-clamp: var(--clamp-desc);
 }
 
-@media (max-width: 599px) {
+@media (max-width: 768px) {
+  .projects {
+    padding: 2rem 2rem;
+  }
+
+  .projects h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .line {
+    align-self: center;
+  }
+
   .card-grid {
     grid-template-columns: 1fr;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0.5em;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem 0;
   }
 
   .card {
@@ -228,7 +277,7 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: rgba(132, 0, 255, 0.2);
+  background: rgba(132, 0, 255, 0.065);
   border-radius: 50%;
   z-index: -1;
 }

@@ -1,5 +1,5 @@
 import "./Hero.css";
-import portrait from "../../assets/portrait_transparent.png";
+import portrait from "../../../public/assets/portrait_transparent.png";
 import SocialLinks from "../SocialLinks/SocialLinks.jsx";
 import PillNav from "../PillNav/PillNav.jsx";
 import DotGrid from "../DotGrid/DotGrid.jsx";
@@ -28,10 +28,20 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-text">
           <h1>
-            <span className="h1-minimal">I'M</span> <span className="highlight">Alec Searle</span>
+            I'M <span className="highlight">Alec Searle</span>
           </h1>
           <h2>Software Engineering Student & Web Developer</h2>
-          <button className="contact-btn">Contact Me</button>
+          <button
+            className="contact-btn"
+            onClick={() => {
+              document.getElementById("contact").scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            Contact Me
+          </button>
         </div>
 
         <div className="hero-image">

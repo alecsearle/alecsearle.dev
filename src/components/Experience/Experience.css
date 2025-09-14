@@ -1,22 +1,26 @@
-.experience-section {
-  padding: 4rem 2rem;
+.about {
   color: white;
-  background: transparent;
-  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 0rem 4rem;
 }
 
-.experience-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.experience-title {
+.about h1 {
   font-size: 3rem;
   font-weight: 300;
-  margin: 0 0 4rem 0;
+  margin: 0 0 2rem 0;
   color: white;
   letter-spacing: -0.02em;
-  text-align: center;
+}
+
+.line {
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin: 2rem 0;
+  border-radius: 2px;
+  width: 100px;
+  align-self: flex-start;
 }
 
 .timeline-container {
@@ -24,6 +28,7 @@
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  margin-top: 2rem;
 }
 
 /* Timeline line */
@@ -177,12 +182,18 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .experience-section {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
   }
 
   .experience-title {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .line {
+    align-self: center;
   }
 
   .timeline-container {

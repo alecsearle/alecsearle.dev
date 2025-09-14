@@ -10,45 +10,51 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#060010",
+    title: "",
+    description: "New project coming soon.",
+    label: "Coming Soon",
+    image: "../../assets/",
+    href: "https://alecsearle.dev/",
+  },
+  {
+    color: "#060010",
+    title: "",
+    description: "New project coming soon.",
+    label: "Coming Soon",
+    image: "../../assets/",
+    href: "https://alecsearle.dev/",
+  },
+  {
+    color: "#060010",
     title: "Apex-fp.com",
-    description: "Financial planning platform",
+    description: "Fire mitigation and home hardening services.",
     label: "Web Development",
-    image: "../../assets/apex-fp.png", // Fixed path - remove the extra ../
+    image: "../../../public/assets/apexfp.png",
+    href: "https://apex-fp.com/",
   },
   {
     color: "#060010",
-    title: "Dashboard",
-    description: "Centralized data view",
-    label: "Overview",
-    image: "/assets/dashboard-preview.jpg", // Add your image path
+    title: "Multiplayer Flappy Bird",
+    description: "Multiplayer Flappy Bird game for everyone.",
+    label: "Vue / Express / Node.js",
+    image: "../../../public/assets/multiplayerflappybird.png",
+    href: "https://multiplayer-flappybird.onrender.com/",
   },
   {
     color: "#060010",
-    title: "Collaboration",
-    description: "Work together seamlessly",
-    label: "Teamwork",
-    image: "/assets/collaboration-preview.jpg", // Add your image path
+    title: "Apexrisksolutions.co",
+    description: "Fire safety consulting and risk assessment services.",
+    label: "Web Development",
+    image: "../../assets/apexrisksolutions.png",
+    href: "https://apexrisksolutions.co",
   },
   {
     color: "#060010",
-    title: "Automation",
-    description: "Streamline workflows",
-    label: "Efficiency",
-    image: "/assets/automation-preview.jpg", // Add your image path
-  },
-  {
-    color: "#060010",
-    title: "Integration",
-    description: "Connect favorite tools",
-    label: "Connectivity",
-    image: "/assets/integration-preview.jpg", // Add your image path
-  },
-  {
-    color: "#060010",
-    title: "Security",
-    description: "Enterprise-grade protection",
-    label: "Protection",
-    image: "/assets/security-preview.jpg", // Add your image path
+    title: "BKBuilders.com",
+    description: "Custom home and remodel specialists.",
+    label: "Web Development",
+    image: "../../assets/bkbuilders.png",
+    href: "http://bkbuildersutah.local/",
   },
 ];
 
@@ -96,6 +102,7 @@ const ParticleCard = ({
   enableTilt = true,
   clickEffect = false,
   enableMagnetism = false,
+  href = null, // Add href prop
 }) => {
   const cardRef = useRef(null);
   const particlesRef = useRef([]);
@@ -257,48 +264,53 @@ const ParticleCard = ({
     };
 
     const handleClick = (e) => {
-      if (!clickEffect) return;
+      if (clickEffect) {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-      const rect = element.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+        const maxDistance = Math.max(
+          Math.hypot(x, y),
+          Math.hypot(x - rect.width, y),
+          Math.hypot(x, y - rect.height),
+          Math.hypot(x - rect.width, y - rect.height)
+        );
 
-      const maxDistance = Math.max(
-        Math.hypot(x, y),
-        Math.hypot(x - rect.width, y),
-        Math.hypot(x, y - rect.height),
-        Math.hypot(x - rect.width, y - rect.height)
-      );
+        const ripple = document.createElement("div");
+        ripple.style.cssText = `
+          position: absolute;
+          width: ${maxDistance * 2}px;
+          height: ${maxDistance * 2}px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
+          left: ${x - maxDistance}px;
+          top: ${y - maxDistance}px;
+          pointer-events: none;
+          z-index: 1000;
+        `;
 
-      const ripple = document.createElement("div");
-      ripple.style.cssText = `
-        position: absolute;
-        width: ${maxDistance * 2}px;
-        height: ${maxDistance * 2}px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
-        left: ${x - maxDistance}px;
-        top: ${y - maxDistance}px;
-        pointer-events: none;
-        z-index: 1000;
-      `;
+        element.appendChild(ripple);
 
-      element.appendChild(ripple);
+        gsap.fromTo(
+          ripple,
+          {
+            scale: 0,
+            opacity: 1,
+          },
+          {
+            scale: 1,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            onComplete: () => ripple.remove(),
+          }
+        );
+      }
 
-      gsap.fromTo(
-        ripple,
-        {
-          scale: 0,
-          opacity: 1,
-        },
-        {
-          scale: 1,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          onComplete: () => ripple.remove(),
-        }
-      );
+      // Handle navigation if href is provided
+      if (href) {
+        window.open(href, "_blank", "noopener,noreferrer");
+      }
     };
 
     element.addEventListener("mouseenter", handleMouseEnter);
@@ -322,13 +334,19 @@ const ParticleCard = ({
     enableMagnetism,
     clickEffect,
     glowColor,
+    href, // Add href to dependencies
   ]);
 
   return (
     <div
       ref={cardRef}
       className={`${className} particle-container`}
-      style={{ ...style, position: "relative", overflow: "hidden" }}
+      style={{
+        ...style,
+        position: "relative",
+        overflow: "hidden",
+        cursor: href ? "pointer" : "default",
+      }}
     >
       {children}
     </div>
@@ -473,8 +491,12 @@ const GlobalSpotlight = ({
 };
 
 const BentoCardGrid = ({ children, gridRef }) => (
-  <div className="card-grid bento-section" ref={gridRef}>
-    {children}
+  <div className="projects">
+    <h1>Projects</h1>
+    <div className="line"></div>
+    <div className="card-grid bento-section" ref={gridRef}>
+      {children}
+    </div>
   </div>
 );
 
@@ -541,6 +563,7 @@ const MagicBento = ({
               <ParticleCard
                 key={index}
                 {...cardProps}
+                href={card.href} // Pass href to ParticleCard
                 disableAnimations={shouldDisableAnimations}
                 particleCount={particleCount}
                 glowColor={glowColor}
@@ -563,6 +586,11 @@ const MagicBento = ({
             <div
               key={index}
               {...cardProps}
+              style={{
+                ...cardProps.style,
+                cursor: "pointer",
+              }}
+              onClick={() => window.open(card.href, "_blank", "noopener,noreferrer")}
               ref={(el) => {
                 if (!el) return;
 
