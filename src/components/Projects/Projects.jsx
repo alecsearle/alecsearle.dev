@@ -29,7 +29,7 @@ const cardData = [
     title: "Apex-fp.com",
     description: "Fire mitigation and home hardening services.",
     label: "Web Development",
-    image: "../../../public/assets/apexfp.png",
+    image: "../../assets/apexfp.png",
     href: "https://apex-fp.com/",
   },
   {
@@ -37,7 +37,7 @@ const cardData = [
     title: "Multiplayer Flappy Bird",
     description: "Multiplayer Flappy Bird game for everyone.",
     label: "Vue / Express / Node.js",
-    image: "../../../public/assets/multiplayerflappybird.png",
+    image: "../../assets/multiplayerflappybird.png",
     href: "https://multiplayer-flappybird.onrender.com/",
   },
   {
