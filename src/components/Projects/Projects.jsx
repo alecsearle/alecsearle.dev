@@ -111,6 +111,8 @@ const ParticleCard = ({
   const memoizedParticles = useRef([]);
   const particlesInitialized = useRef(false);
   const magnetismAnimationRef = useRef(null);
+  const [isImageShown, setIsImageShown] = useState(false);
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= MOBILE_BREAKPOINT;
 
   const initializeParticles = useCallback(() => {
     if (particlesInitialized.current || !cardRef.current) return;
@@ -264,6 +266,21 @@ const ParticleCard = ({
     };
 
     const handleClick = (e) => {
+      // On mobile, first click toggles image view, second click navigates
+      if (isMobile && !isImageShown && href) {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsImageShown(true);
+        cardRef.current?.classList.add("show-image");
+
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+          setIsImageShown(false);
+          cardRef.current?.classList.remove("show-image");
+        }, 3000);
+        return;
+      }
+
       if (clickEffect) {
         const rect = element.getBoundingClientRect();
         const x = e.clientX - rect.left;

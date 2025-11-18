@@ -59,7 +59,7 @@
   background: var(--background-dark);
   font-weight: 300;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 
   /* Background image properties */
@@ -78,10 +78,15 @@
   content: "";
   position: absolute;
   inset: 0; /* Use inset instead of individual positioning */
-  background: var(--background-dark); /* Solid background instead of gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(6, 0, 16, 0.82) 0%,
+    rgba(6, 0, 16, 0.87) 50%,
+    rgba(6, 0, 16, 0.9) 100%
+  );
   z-index: 1;
   border-radius: 20px;
-  transition: all 0.5s ease;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover::before {
@@ -114,7 +119,7 @@
   position: relative;
   color: var(--white);
   z-index: 2; /* Ensure content is above overlay */
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover .card__header,
@@ -205,6 +210,37 @@
   .card {
     width: 100%;
     min-height: 180px;
+  }
+
+  /* Mobile: Lighter overlay by default to show some image */
+  .card::before {
+    background: linear-gradient(
+      135deg,
+      rgba(6, 0, 16, 0.65) 0%,
+      rgba(6, 0, 16, 0.7) 50%,
+      rgba(6, 0, 16, 0.75) 100%
+    );
+    transition: opacity 0.5s ease;
+  }
+
+  /* Toggle state - when tapped once, show image */
+  .card.show-image::before {
+    opacity: 0;
+  }
+
+  .card.show-image .card__header,
+  .card.show-image .card__content {
+    opacity: 0;
+  }
+
+  /* Active state for immediate feedback on tap */
+  .card:active::before {
+    opacity: 0.3;
+  }
+
+  .card__header,
+  .card__content {
+    transition: opacity 0.5s ease;
   }
 }
 
