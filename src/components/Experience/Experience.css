@@ -141,12 +141,33 @@
   white-space: nowrap;
 }
 
+.position-location {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
 .position {
   font-size: 1.1rem;
   font-weight: 300;
   color: #e0e0e0;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   font-style: italic;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  font-weight: 400;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  white-space: nowrap;
 }
 
 .description-list {
@@ -221,6 +242,21 @@
   }
 
   .period {
+    font-size: 0.8rem;
+  }
+
+  .position-location {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .position {
+    font-size: 1rem;
+  }
+
+  .location {
     font-size: 0.8rem;
   }
 }

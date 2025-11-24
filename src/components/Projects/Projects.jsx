@@ -10,27 +10,20 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#060010",
-    title: "",
-    description: "New project coming soon.",
-    label: "Coming Soon",
-    image: "../../assets/",
-    href: "https://alecsearle.dev/",
-  },
-  {
-    color: "#060010",
-    title: "",
-    description: "New project coming soon.",
-    label: "Coming Soon",
-    image: "../../assets/",
-    href: "https://alecsearle.dev/",
-  },
-  {
-    color: "#060010",
-    title: "Apex-fp.com",
-    description: "Fire mitigation and home hardening services.",
+    title: "BK Builders UT",
+    description: "Custom home and remodel specialists.",
     label: "Web Development",
-    image: "../../assets/apexfp.png",
-    href: "https://apex-fp.com/",
+    image: "../../assets/bkbuilders.png",
+    href: "https://bkbuildersutah.com/",
+  },
+
+  {
+    color: "#060010",
+    title: "Squeegee Bee",
+    description: "Window cleaning and pressure washing services.",
+    label: "Web Development",
+    image: "../../assets/squeegeebee-website.png",
+    href: "https://squeegeebeewindowcleaning.com/",
   },
   {
     color: "#060010",
@@ -42,7 +35,15 @@ const cardData = [
   },
   {
     color: "#060010",
-    title: "Apexrisksolutions.co",
+    title: "Apex Fire Preparedness",
+    description: "Fire mitigation and home hardening services.",
+    label: "Web Development",
+    image: "../../assets/apexfp.png",
+    href: "https://apex-fp.com/",
+  },
+  {
+    color: "#060010",
+    title: "Apex Risk Solutions",
     description: "Fire safety consulting and risk assessment services.",
     label: "Web Development",
     image: "../../assets/apexrisksolutions.png",
@@ -50,11 +51,11 @@ const cardData = [
   },
   {
     color: "#060010",
-    title: "BKBuilders.com",
-    description: "Custom home and remodel specialists.",
-    label: "Web Development",
-    image: "../../assets/bkbuilders.png",
-    href: "https://bkbuildersutah.com/",
+    title: "",
+    description: "New project coming soon.",
+    label: "Coming Soon",
+    image: "../../assets/",
+    href: "https://alecsearle.dev/",
   },
 ];
 

@@ -9,34 +9,49 @@ const experienceData = [
   {
     id: 1,
     company: "Alec Searle Dev",
-    position: "Private Web Development",
+    position: "Website Developer",
+    location: "Remote",
     period: "Present",
     description: [
-      "Design and develop custom websites for clients using modern web technologies",
-      "Collaborate with clients to understand their requirements and deliver tailored solutions that meet their needs",
-      "Maintain and update existing websites to ensure optimal performance, security, and user experience",
+      "Build and launch WordPress websites for private clients, boosting online visibility and SEO reach.",
+      "Provide ongoing hosting, content, and performance optimization support.",
     ],
   },
   {
     id: 2,
-    company: "ExpiTrans (Buzz Financial)",
-    position: "ISV Support Specialist Lead",
-    period: "Mar 2025 - Present",
+    company: "Zonos",
+    position: "Landed Cost Audit Specialist",
+    location: "St. George, UT",
+    period: "Dec 2025 - Present",
     description: [
-      "Lead a team of support specialists providing technical assistance for payment processing partners",
-      "Coordinate resolution of technical issues, escalations, and ensure timely communication with partners",
-      "Develop custom software solutions to streamline internal processes and enhance client experience",
+      "Audit landed cost quotes against actual import charges to identify discrepancies in duties, taxes, and fees.",
+      "Analyze variance patterns and investigate root causes to improve accuracy of future quotes.",
+      "Collaborate with product and operations teams to share insights that support process and system improvements.",
     ],
   },
   {
     id: 3,
+    company: "ExpiTrans (Buzz Financial)",
+    position: "ISV Opereations Lead / Developer",
+    location: "St. George, UT",
+    period: "Mar 2025 - Dec 2025",
+    description: [
+      "Served as the first hire in the Utah branch, helping grow the team from 2 to 10 ISV specialists while training each hire.",
+      "Handled Tier 2 integration and troubleshooting tickets, resolving most issues without Tier 3 escalation.",
+      "Acted as office lead and managed workflow and priorities when management was offsite.",
+      "Collaborated across departments to ensure timely and efficient ticket resolution.",
+      "Built a webhook automation system for converting warm leads into approved merchants, cutting response time by 80%.",
+    ],
+  },
+  {
+    id: 4,
     company: "HFB Technologies",
-    position: "Development Coordinator -> Web Management Developer",
+    position: "Frontend Developer",
+    location: "St. George, UT",
     period: "Aug 2024 - Mar 2025",
     description: [
-      "Coordinated development tasks, managed timelines, and facilitated communication between developers and clients",
-      "Developed and maintained client websites using Divi and WordPress",
-      "Communicated directly with clients to clarify request needs and recommend improvements",
+      "Implemented 60+ weekly updates for client WordPress/Divi sites across a 1,400-site portfolio.",
+      "Collaborated directly with clients to clarify design requests and recommend UX improvements.",
     ],
   },
 ];
@@ -152,7 +167,27 @@ function Experience() {
                   <h3 className="company-name">{item.company}</h3>
                   <span className="period">{item.period}</span>
                 </div>
-                <h4 className="position">{item.position}</h4>
+                <div className="position-location">
+                  <h4 className="position">{item.position}</h4>
+                  {item.location && (
+                    <span className="location">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{ marginRight: "4px" }}
+                      >
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      {item.location}
+                    </span>
+                  )}
+                </div>
                 <ul className="description-list">
                   {item.description.map((desc, descIndex) => (
                     <li key={descIndex}>{desc}</li>
