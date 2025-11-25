@@ -34,7 +34,7 @@ const experienceData = [
     company: "ExpiTrans (Buzz Financial)",
     position: "ISV Opereations Lead / Developer",
     location: "St. George, UT",
-    period: "Mar 2025 - Dec 2025",
+    period: "Mar 2025 - Nov 2025",
     description: [
       "Served as the first hire in the Utah branch, helping grow the team from 2 to 10 ISV specialists while training each hire.",
       "Handled Tier 2 integration and troubleshooting tickets, resolving most issues without Tier 3 escalation.",
