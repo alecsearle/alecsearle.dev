@@ -4,7 +4,7 @@ export default function Header() {
       <img
         src="/alec_colored.JPG"
         alt="alec_searle"
-        className="w-24 h-24 rounded-full object-cover object-top border-2 border-white/10"
+        className="w-24 h-24 rounded-full object-cover border-2 border-white/10" style={{ objectPosition: '50% 15%' }}
       />
       <div className="text-center">
         <h1 className="text-2xl font-semibold tracking-tight">@alec_searle</h1>
