@@ -1,13 +1,13 @@
-import SectionLabel from '../ui/SectionLabel'
-import ProductCard from './ProductCard'
-import { BEGINNER_SETUP, BETAFPV_MAIN } from './products'
+import SectionLabel from "../ui/SectionLabel";
+import ProductCard from "./ProductCard";
+import { BEGINNER_SETUP, BETAFPV_MAIN } from "./products";
 
 export default function AffiliateSection() {
   return (
     <div className="w-full pb-8">
       <SectionLabel
         title="The Best Beginner FPV Setup"
-        subtitle="Everything you need to start flying FPV"
+        subtitle="Everything you need to start flying FPV + the same setup I started with ;)"
       />
       <div className="flex flex-col gap-3">
         {BEGINNER_SETUP.map((product) => (
@@ -26,5 +26,5 @@ export default function AffiliateSection() {
         Some links are affiliate links — they help support the channel at no extra cost to you.
       </p>
     </div>
-  )
+  );
 }
