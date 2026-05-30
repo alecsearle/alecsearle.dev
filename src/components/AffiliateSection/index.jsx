@@ -23,7 +23,7 @@ export default function AffiliateSection() {
         Shop All BetaFPV →
       </a>
       <p className="mt-3 text-center text-[11px] text-white/20 leading-relaxed">
-        Some links are affiliate links — they help support the channel at no extra cost to you.
+        Some links are affiliate links | They help support the channel at no extra cost to you 🙌
       </p>
     </div>
   );
