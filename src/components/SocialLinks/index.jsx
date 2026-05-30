@@ -36,9 +36,10 @@ function SocialButton({ label, href, Icon, hoverColor }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`group text-white/50 transition-colors duration-200 ${hoverColor}`}
+      className={`group flex flex-col items-center gap-1 text-white/50 transition-colors duration-200 ${hoverColor}`}
     >
       <Icon className="w-7 h-7" />
+      <span className="text-[10px] font-light tracking-wide text-white/30">{label}</span>
     </a>
   )
 }
