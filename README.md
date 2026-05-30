@@ -1,6 +1,6 @@
 # alecsearle.dev
 
-Personal FPV landing page and content hub — live at [alecsearle.dev](https://alecsearle.dev)
+Personal FPV landing page and content hub | Live at [alecsearle.dev](https://alecsearle.dev)
 
 ## Overview
 

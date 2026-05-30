@@ -1,5 +1,6 @@
 import { Youtube, Instagram } from 'lucide-react'
 import TikTokIcon from './TikTokIcon'
+import MakerWorldIcon from './MakerWorldIcon'
 
 const SOCIALS = [
   {
@@ -20,6 +21,12 @@ const SOCIALS = [
     Icon: TikTokIcon,
     hoverColor: 'hover:text-white',
   },
+  {
+    label: 'MakerWorld',
+    href: 'https://makerworld.com/en/@Awik73',
+    Icon: MakerWorldIcon,
+    hoverColor: '',
+  },
 ]
 
 function SocialButton({ label, href, Icon, hoverColor }) {
@@ -29,7 +36,7 @@ function SocialButton({ label, href, Icon, hoverColor }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`text-white/50 transition-colors duration-200 ${hoverColor}`}
+      className={`group text-white/50 transition-colors duration-200 ${hoverColor}`}
     >
       <Icon className="w-7 h-7" />
     </a>
