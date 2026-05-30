@@ -9,9 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "lucide-react": "^0.542.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "lucide-react": "^0.542.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",

@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import Header from './components/Header'
 import SocialLinks from './components/SocialLinks'
 import HeroStrip from './components/HeroStrip'
@@ -18,6 +19,7 @@ export default function App() {
         <YouTubeCarousel />
         <AffiliateSection />
       </div>
+      <Analytics />
     </main>
   )
 }
