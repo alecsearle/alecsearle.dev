@@ -1,10 +1,14 @@
 import SectionLabel from "../ui/SectionLabel";
 import ProductCard from "./ProductCard";
-import { BEGINNER_SETUP, BETAFPV_MAIN } from "./products";
+import { BEGINNER_SETUP, BETAFPV_MAIN, FEATURED } from "./products";
 
 export default function AffiliateSection() {
   return (
     <div className="w-full pb-8">
+      <SectionLabel title="Featured" subtitle="Everything you need to get in the air, all in one kit 😱" />
+      <div className="mb-6">
+        <ProductCard product={FEATURED} />
+      </div>
       <SectionLabel
         title="The Best Beginner FPV Setup"
         subtitle="Everything you need to start flying FPV + the same setup I started with ;)"

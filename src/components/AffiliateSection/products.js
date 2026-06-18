@@ -2,6 +2,14 @@ const REF = 'sca_ref=11385152.B4J5URcAyy&utm_source=socialmedia&utm_medium=socia
 
 export const BETAFPV_MAIN = `https://betafpv.com?${REF}`
 
+export const FEATURED = {
+  id: 'meteor75-pro-kit',
+  name: 'Meteor75 Pro FPV Kit',
+  description: 'Complete beginner kit — drone, goggles & controller',
+  href: `https://betafpv.com/products/meteor75-pro-fpv-kit?${REF}`,
+  image: '/images/Meteor75_Pro_FPV_Kit.png',
+}
+
 export const BEGINNER_SETUP = [
   {
     id: 'air65',
