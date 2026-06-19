@@ -5,7 +5,7 @@ import { BEGINNER_SETUP, BETAFPV_MAIN, FEATURED } from "./products";
 export default function AffiliateSection() {
   return (
     <div className="w-full pb-8">
-      <SectionLabel title="Featured" subtitle="Everything you need to get in the air, all in one kit 😱" />
+      <SectionLabel title="Featured" subtitle="One kit. One purchase. Only $200 and you're in the air" />
       <div className="mb-6">
         <ProductCard product={FEATURED} />
       </div>
