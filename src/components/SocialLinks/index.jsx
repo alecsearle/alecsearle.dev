@@ -23,7 +23,7 @@ const SOCIALS = [
   },
   {
     label: 'MakerWorld',
-    href: 'https://makerworld.com/en/@Awik73',
+    href: 'https://makerworld.com/en/collections/29512390-fpv-featured',
     Icon: MakerWorldIcon,
     hoverColor: '',
   },
