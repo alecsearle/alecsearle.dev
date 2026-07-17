@@ -1,5 +1,6 @@
 import SectionLabel from "../ui/SectionLabel";
 import ProductCard from "./ProductCard";
+import BuildDropdown from "./BuildDropdown";
 import { BEGINNER_SETUP, BETAFPV_MAIN, FEATURED } from "./products";
 
 export default function AffiliateSection() {
@@ -18,6 +19,7 @@ export default function AffiliateSection() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
       <a
         href={BETAFPV_MAIN}
         target="_blank"
@@ -26,7 +28,16 @@ export default function AffiliateSection() {
       >
         Shop All BetaFPV →
       </a>
-      <p className="mt-3 text-center text-[11px] text-white/20 leading-relaxed">
+
+      <div className="mt-8">
+        <SectionLabel
+          title="My First 3.5&quot; Build"
+          subtitle="The exact parts list from my first 3.5&quot; freestyle build"
+        />
+        <BuildDropdown />
+      </div>
+
+      <p className="mt-8 text-center text-[11px] text-white/20 leading-relaxed">
         Some links are affiliate links | They help support the channel at no extra cost to you 🙌
       </p>
     </div>

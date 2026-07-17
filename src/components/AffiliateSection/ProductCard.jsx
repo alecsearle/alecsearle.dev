@@ -19,9 +19,9 @@ export default function ProductCard({ product }) {
         <div>
           <div className="flex items-center gap-2">
             <p className="text-sm font-medium">{product.name}</p>
-            {product.affiliate === false && (
+            {product.badge && (
               <span className="text-[10px] text-white/25 border border-white/15 rounded px-1.5 py-0.5 leading-none">
-                Amazon
+                {product.badge}
               </span>
             )}
           </div>
