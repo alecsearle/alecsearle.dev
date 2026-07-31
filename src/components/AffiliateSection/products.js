@@ -76,7 +76,7 @@ export const BUILD_SUBTITLE = 'Every part on my first 3.5" freestyle quad';
 
 // Finished-quad hero photo. Drop the file in public/images/ to activate it;
 // until then the section shows a labeled placeholder.
-export const BUILD_HERO_IMAGE = "/images/finished_build.png";
+export const BUILD_HERO_IMAGE = "/images/finished_build.jpg";
 
 // Paste the build video URL here at launch. Empty falls back to the channel.
 export const BUILD_VIDEO_URL = "";

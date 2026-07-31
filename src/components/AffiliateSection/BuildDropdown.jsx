@@ -26,7 +26,7 @@ function BuildHero() {
       ) : (
         <div className="w-full aspect-video rounded-xl bg-white/5 border border-dashed border-white/15 flex items-center justify-center">
           <p className="text-xs text-white/30 text-center px-4">
-            Finished-build photo — add <code className="text-white/45">finished_build.png</code> to /public/images
+            Finished-build photo — add <code className="text-white/45">finished_build.jpg</code> to /public/images
           </p>
         </div>
       )}
