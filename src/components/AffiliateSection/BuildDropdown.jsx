@@ -37,7 +37,7 @@ function BuildHero() {
         className="mt-3 flex items-center justify-center gap-2 w-full px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl transition-all duration-200 text-sm font-semibold"
       >
         <Youtube className="w-4 h-4 text-red-500" />
-        Watch the build video
+        {BUILD_VIDEO_URL ? 'Watch the build video' : 'Build video coming soon'}
       </a>
     </div>
   )
