@@ -79,7 +79,7 @@ export const BUILD_SUBTITLE = 'Every part on my first 3.5" freestyle quad';
 export const BUILD_HERO_IMAGE = "/images/finished_build.jpg";
 
 // Paste the build video URL here at launch. Empty falls back to the channel.
-export const BUILD_VIDEO_URL = "";
+export const BUILD_VIDEO_URL = "https://youtu.be/1FGU_FMeoo4?si=TbTPNEpzvOGqWCeJ";
 export const BUILD_CHANNEL_URL = "https://www.youtube.com/@alec_searle";
 
 export const BUILD_PARTS = [
